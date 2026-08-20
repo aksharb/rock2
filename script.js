@@ -1,5 +1,6 @@
 let humanScore = 0
 let computerScore = 0
+
 //function to return "rock", "paper", "scissors" randomly
 function getComputerChoice() {
     let numberValue = Math.floor(Math.random() * 3)
@@ -22,7 +23,7 @@ function playRound(humanChoice, computerChoice) {
     let humanChoiceLower = humanChoice.toLowerCase()
     if(humanChoiceLower == computerChoice)
     {
-        console.log("It's a tie, you both chose ${humanChoiceLower}")
+        console.log(`It's a tie, you both chose ${humanChoiceLower}`)
     } else{
         if(humanChoiceLower == "rock"){
             if(computerChoice == "paper"){
@@ -45,9 +46,29 @@ function playRound(humanChoice, computerChoice) {
             }
         }
     }
+    // console.log(`human score: ${humanScore}`)
+    // console.log(`computer score: ${computerScore}`);
+    if (humanChoiceLower !== computerChoice) {
+            console.log(`You chose ${humanChoice}, the computer chose ${computerChoice}`);
+    console.log(`Your score: ${humanScore}\nComputer's score: ${computerScore}`);
+    }
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
 
-playRound(humanSelection, computerSelection)
+
+function playGame() {
+    const humanSelection = getHumanChoice()
+    const computerSelection = getComputerChoice()
+    playRound(humanSelection, computerSelection)
+}
+
+for(let i = 0; i < 5; i++){
+    playGame()
+}
+if (humanScore > computerScore){
+    console.log(`You won ${humanScore} out of 5 rounds, you win!`)
+} else if(computerScore > humanScore){
+    console.log(`You lost ${computerScore} out of 5 rounds, you lose`);
+} else {
+    console.log(`You and the computer both won ${humanScore} rounds each out 5, it's a tie!`);
+}
