@@ -1,7 +1,6 @@
 let humanScore = 0
 let computerScore = 0
 
-//function to return "rock", "paper", "scissors" randomly
 function getComputerChoice() {
     let numberValue = Math.floor(Math.random() * 3)
     if (numberValue == 0){
@@ -13,7 +12,6 @@ function getComputerChoice() {
     }
 }
 
-//function to take user choice and return it
 function getHumanChoice() {
     let userChoice = prompt("Please enter your choice")
     return userChoice
@@ -46,8 +44,7 @@ function playRound(humanChoice, computerChoice) {
             }
         }
     }
-    // console.log(`human score: ${humanScore}`)
-    // console.log(`computer score: ${computerScore}`);
+
     if (humanChoiceLower !== computerChoice) {
             console.log(`You chose ${humanChoice}, the computer chose ${computerChoice}`);
     console.log(`Your score: ${humanScore}\nComputer's score: ${computerScore}`);
